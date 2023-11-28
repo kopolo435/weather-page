@@ -1,1 +1,3 @@
-const i = 2;
+import getForecast from "./fetchWeather";
+
+getForecast("Colón,Panamá");
