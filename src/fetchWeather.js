@@ -4,8 +4,9 @@ async function getForecast(location) {
     `https://api.weatherapi.com/v1/forecast.json ?key=${key}&q=${location}&days=2&aqi=yes`,
     { mode: "cors" }
   );
+  // return response.json().then((data) => data);
   const data = await response.json();
-  console.log(data);
+  return data;
 }
 
 export default getForecast;
