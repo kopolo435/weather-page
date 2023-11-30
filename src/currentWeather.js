@@ -1,4 +1,6 @@
 const createCurrentWeather = (
+  city,
+  country,
   time,
   date,
   tempC,
@@ -15,6 +17,8 @@ const createCurrentWeather = (
   icon,
   co2
 ) => ({
+  city,
+  country,
   time,
   date,
   tempC,
