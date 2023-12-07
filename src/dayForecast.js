@@ -1,5 +1,6 @@
 const createDayForecast = (
   hourForecast,
+  date,
   maxTempC,
   maxTempF,
   minTempC,
@@ -11,6 +12,7 @@ const createDayForecast = (
   iconCondition
 ) => ({
   hourForecast,
+  date,
   maxTempC,
   maxTempF,
   minTempC,
