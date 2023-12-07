@@ -44,17 +44,16 @@ function getCurrentDate(lastUpdated) {
 }
 
 function getCurrentTime(lastUpdated) {
-  const currentDate = new Date();
   const lastUpdatedDate = new Date(lastUpdated);
-  return `${lastUpdatedDate.getHours()}:${currentDate.getMinutes()}`;
+  return `${lastUpdatedDate.getHours()}:${lastUpdatedDate.getMinutes()}`;
 }
 
 function handleCurrentWeather(data) {
   return createCurrentWeather(
     data.location.name,
     data.location.country,
-    getCurrentTime(data.current.last_updated),
-    getCurrentDate(data.current.last_updated),
+    getCurrentTime(data.location.localtime),
+    getCurrentDate(data.location.localtime),
     data.current.temp_c,
     data.current.temp_f,
     data.current.feelslike_c,
