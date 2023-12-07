@@ -2,13 +2,13 @@ import createCurrentWeather from "./currentWeather";
 
 function getDayName(dayNumber) {
   const days = [
+    "Domingo",
     "Lunes",
     "Martes",
     "Miercoles",
     "Jueves",
     "Viernes",
     "Sabado",
-    "Domingo",
   ];
 
   return days[dayNumber];
@@ -33,8 +33,8 @@ function getMonthName(monthNumber) {
   return months[monthNumber];
 }
 
-function getCurrentDate() {
-  const currentDate = new Date();
+function getCurrentDate(lastUpdated) {
+  const currentDate = new Date(lastUpdated);
   const date = `${getDayName(
     currentDate.getDay()
   )}, ${currentDate.getDate()} de ${getMonthName(
@@ -43,17 +43,18 @@ function getCurrentDate() {
   return date;
 }
 
-function getCurrentTime() {
+function getCurrentTime(lastUpdated) {
   const currentDate = new Date();
-  return `${currentDate.getHours()}:${currentDate.getMinutes()}`;
+  const lastUpdatedDate = new Date(lastUpdated);
+  return `${lastUpdatedDate.getHours()}:${currentDate.getMinutes()}`;
 }
 
 function handleCurrentWeather(data) {
   return createCurrentWeather(
     data.location.name,
     data.location.country,
-    getCurrentTime(),
-    getCurrentDate(),
+    getCurrentTime(data.current.last_updated),
+    getCurrentDate(data.current.last_updated),
     data.current.temp_c,
     data.current.temp_f,
     data.current.feelslike_c,
