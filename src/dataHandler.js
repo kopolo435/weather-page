@@ -70,4 +70,12 @@ function handleCurrentWeather(data) {
   );
 }
 
-export default handleCurrentWeather;
+function getForecast(forecastday, localtime) {
+  const currentDate = new Date(localtime);
+  const day1 = forecastday[0].hour.slice(currentDate.getHours());
+  const day2Limit = 24 - day1.length;
+  const day2 = forecastday[1].hour.slice(0, day2Limit);
+  return day1.concat(day2);
+}
+
+export { handleCurrentWeather, getForecast };
