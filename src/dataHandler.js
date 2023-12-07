@@ -1,4 +1,6 @@
 import createCurrentWeather from "./currentWeather";
+import createHourForecast from "./HourForecast";
+import createDayForecast from "./dayForecast";
 
 function getDayName(dayNumber) {
   const days = [
@@ -45,7 +47,10 @@ function getCurrentDate(lastUpdated) {
 
 function getCurrentTime(lastUpdated) {
   const lastUpdatedDate = new Date(lastUpdated);
-  return `${lastUpdatedDate.getHours()}:${lastUpdatedDate.getMinutes()}`;
+  const addZero = (i) => (i < 10 ? `0${i}` : i);
+  const hour = addZero(lastUpdatedDate.getHours());
+  const minutes = addZero(lastUpdatedDate.getMinutes());
+  return `${hour}:${minutes}`;
 }
 
 function handleCurrentWeather(data) {
@@ -70,12 +75,50 @@ function handleCurrentWeather(data) {
   );
 }
 
-function getForecast(forecastday, localtime) {
-  const currentDate = new Date(localtime);
-  const day1 = forecastday[0].hour.slice(currentDate.getHours());
-  const day2Limit = 24 - day1.length;
-  const day2 = forecastday[1].hour.slice(0, day2Limit);
-  return day1.concat(day2);
+function getHourObject(hour) {
+  return createHourForecast(
+    getCurrentTime(hour.time),
+    hour.condition.icon,
+    hour.condition.text,
+    hour.temp_c,
+    hour.temp_f
+  );
+}
+
+function getDayObject(day, date, astro, hourForecast) {
+  return createDayForecast(
+    hourForecast,
+    date,
+    day.maxtemp_c,
+    day.maxtemp_f,
+    day.mintemp_c,
+    day.mintemp_f,
+    astro.sunrise,
+    astro.sunset,
+    day.daily_chance_of_rain,
+    day.condition.text,
+    day.condition.icon
+  );
+}
+
+function getForecast(forecastday) {
+  const dayForecast = [];
+  console.log(forecastday);
+  forecastday.forEach((day) => {
+    const hourForecast = [];
+    day.hour.forEach((hour) => {
+      hourForecast.push(getHourObject(hour));
+    });
+    dayForecast.push(
+      getDayObject(
+        day.day,
+        getCurrentDate(`${day.date}T00:00:00`),
+        day.astro,
+        hourForecast
+      )
+    );
+  });
+  return dayForecast;
 }
 
 export { handleCurrentWeather, getForecast };
