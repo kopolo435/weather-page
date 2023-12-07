@@ -1,5 +1,5 @@
 import createCurrentWeather from "./currentWeather";
-import createHourForecast from "./HourForecast";
+import createHourForecast from "./hourForecast";
 import createDayForecast from "./dayForecast";
 
 function getDayName(dayNumber) {
