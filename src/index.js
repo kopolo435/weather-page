@@ -1,18 +1,19 @@
 import getWeatherData from "./fetchWeather";
-import * as weather from "./dataHandler";
+import * as dataHandler from "./dataHandler";
 
-function searchForecast(location) {
-  getWeatherData(location).then((data) => {
-    console.log(data);
+async function searchForecast(location) {
+  const data = await getWeatherData(location);
+  const currentWeather = dataHandler.handleCurrentWeather(data);
+  const forecastWeather = dataHandler.getForecast(
+    data.forecast.forecastday,
+    data.location.localtime
+  );
 
-    const currentWeather = weather.handleCurrentWeather(data);
-    const forecastWeather = weather.getForecast(
-      data.forecast.forecastday,
-      data.location.localtime
-    );
-    console.log(currentWeather);
-    console.log(forecastWeather);
-  });
+  return { currentWeather, forecastWeather };
 }
 
-searchForecast("London");
+function updateDisplay(weather) {
+  console.log(weather);
+}
+
+searchForecast("London").then(updateDisplay);
