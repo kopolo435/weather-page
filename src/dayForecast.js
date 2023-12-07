@@ -1,10 +1,27 @@
-const createDayForecast = (time, day, icon, condition, tempC, tempF) => ({
-  time,
-  day,
-  icon,
-  condition,
-  tempC,
-  tempF,
+const createDayForecast = (
+  hourForecast,
+  date,
+  maxTempC,
+  maxTempF,
+  minTempC,
+  minTempF,
+  sunrise,
+  sunset,
+  rainProbability,
+  dayCondition,
+  iconCondition
+) => ({
+  hourForecast,
+  date,
+  maxTempC,
+  maxTempF,
+  minTempC,
+  minTempF,
+  sunrise,
+  sunset,
+  rainProbability,
+  dayCondition,
+  iconCondition,
 });
 
 export default createDayForecast;
