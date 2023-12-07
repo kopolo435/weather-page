@@ -9,4 +9,4 @@ async function getWeatherData(location) {
   return data;
 }
 
-export default getForecast;
+export default getWeatherData;
