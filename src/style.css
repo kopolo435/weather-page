@@ -29,9 +29,23 @@ main{
 }
 
 #top{
+    width: max(600px,70vw);
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+#mainInfo{
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+}
+
+#time{
+    font-size: 24px;
 }
 
 footer{
