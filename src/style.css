@@ -50,6 +50,7 @@ main{
 
 .conditionCon{
     display: flex;
+    align-items: center;
 }
 
 .conditionCon p{
