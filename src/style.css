@@ -59,3 +59,21 @@ footer{
     display: flex;
     justify-content: space-between;
 }
+
+/*Media queries*/
+
+@media (max-width: 500px) {
+    #currentWeather{
+        flex-direction: column;
+    }
+
+    #top{
+        width: 100%;
+    }
+
+    #sideInfo{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+  }
