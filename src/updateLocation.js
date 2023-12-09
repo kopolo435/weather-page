@@ -64,9 +64,14 @@ function changeSunset(sunsetTime) {
   sunsetElement.textContent = sunsetTime;
 }
 
-function changeMaxTemp(maxTemp) {
+function changeMaxTemp(maxTempC, maxTempF) {
   const maxTempElement = document.getElementById("maxTemp");
-  maxTempElement.textContent = `${maxTemp}°C`;
+  maxTempElement.textContent = `${maxTempC}°C`;
+}
+
+function changeMinTemp(minTempC, maxTempF) {
+  const minTempElement = document.getElementById("minTemp");
+  minTempElement.textContent = `${minTempC}°C`;
 }
 
 function updateLocation(currentWeather, forecast) {
@@ -84,6 +89,7 @@ function updateLocation(currentWeather, forecast) {
   changeSunrise(forecast[0].sunrise);
   changeSunset(forecast[0].sunset);
   changeMaxTemp(forecast[0].maxTempC, forecast[0].maxTempF);
+  changeMinTemp(forecast[0].minTempC, forecast[0].minTempF);
 }
 
 export default updateLocation;
