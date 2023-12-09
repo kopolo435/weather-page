@@ -55,6 +55,20 @@ main{
     font-size: 24px;
 }
 
+#forecastContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.dayForecast{
+    width: 225px;
+    flex: 0 1 auto;
+    height: 200px;
+    background-color: aqua;
+}
+
 footer{
     display: flex;
     justify-content: space-between;
@@ -75,5 +89,9 @@ footer{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+    }
+
+    #forecastContainer{
+        justify-content: center;
     }
   }
