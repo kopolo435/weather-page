@@ -1,5 +1,6 @@
 import getWeatherData from "./fetchWeather";
 import * as dataHandler from "./dataHandler";
+import style from "./style.css";
 
 async function searchForecast(location) {
   const data = await getWeatherData(location);
