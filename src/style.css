@@ -21,6 +21,7 @@ main{
     background-color: bisque;
     flex-direction: column;
     gap: 20px;
+    padding: 0px 2vw;
 }
 
 #currentWeather{
@@ -29,7 +30,7 @@ main{
 }
 
 #top{
-    width: max(600px,70vw);
+    width: min(600px,70vw);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -42,6 +43,12 @@ main{
     grid-template-rows: 1fr 1fr;
     gap: 10px;
     justify-content: center;
+}
+
+#detalles{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 #time{
