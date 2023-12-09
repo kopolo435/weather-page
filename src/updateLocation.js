@@ -24,14 +24,22 @@ function changeConditionText(condition) {
   conditionElement.textContent = condition;
 }
 
-function changeTemperature(tempC, tempF) {
+function changeTemperature(tempC, tempF, unitSystem) {
   const tempElement = document.getElementById("temp");
-  tempElement.textContent = `${tempC}°C`;
+  if (unitSystem === "metric") {
+    tempElement.textContent = `${tempC} °C`;
+  } else {
+    tempElement.textContent = `${tempF} °F`;
+  }
 }
 
-function changeRealSensation(tempC, tempF) {
+function changeRealSensation(tempC, tempF, unitSystem) {
   const realSensation = document.getElementById("sensation");
-  realSensation.textContent = `${tempC}°C`;
+  if (unitSystem === "metric") {
+    realSensation.textContent = `${tempC} °C`;
+  } else {
+    realSensation.textContent = `${tempF} °F`;
+  }
 }
 
 function changeNubosity(cloud) {
@@ -44,9 +52,13 @@ function changeHumidity(humidity) {
   humidityElement.textContent = `${humidity}%`;
 }
 
-function changeGustVelocity(gustKph, gustMph) {
+function changeGustVelocity(gustKph, gustMph, unitSystem) {
   const gustElement = document.getElementById("windVel");
-  gustElement.textContent = `${gustKph} Kph`;
+  if (unitSystem === "metric") {
+    gustElement.textContent = `${gustKph} Kph`;
+  } else {
+    gustElement.textContent = `${gustMph} Mph`;
+  }
 }
 
 function changeWindDirection(windDir) {
@@ -64,32 +76,48 @@ function changeSunset(sunsetTime) {
   sunsetElement.textContent = sunsetTime;
 }
 
-function changeMaxTemp(maxTempC, maxTempF) {
+function changeMaxTemp(maxTempC, maxTempF, unitSystem) {
   const maxTempElement = document.getElementById("maxTemp");
-  maxTempElement.textContent = `${maxTempC}°C`;
+  if (unitSystem === "metric") {
+    maxTempElement.textContent = `${maxTempC} °C`;
+  } else {
+    maxTempElement.textContent = `${maxTempF} °F`;
+  }
 }
 
-function changeMinTemp(minTempC, maxTempF) {
+function changeMinTemp(minTempC, maxTempF, unitSystem) {
   const minTempElement = document.getElementById("minTemp");
-  minTempElement.textContent = `${minTempC}°C`;
+  if (unitSystem === "metric") {
+    minTempElement.textContent = `${minTempC} °C`;
+  } else {
+    minTempElement.textContent = `${maxTempF} F`;
+  }
 }
 
-function updateLocation(currentWeather, forecast) {
+function updateLocation(currentWeather, forecast, unitSystem) {
   changeTitle(currentWeather.city, currentWeather.country);
   changeDate(currentWeather.date);
   changeTime(currentWeather.time);
   changeConditionIcon(currentWeather.icon);
   changeConditionText(currentWeather.weatherCondition);
-  changeTemperature(currentWeather.tempC, currentWeather.tempF);
-  changeRealSensation(currentWeather.feelsLikeC, currentWeather.feelsLikeF);
+  changeTemperature(currentWeather.tempC, currentWeather.tempF, unitSystem);
+  changeRealSensation(
+    currentWeather.feelsLikeC,
+    currentWeather.feelsLikeF,
+    unitSystem
+  );
   changeNubosity(currentWeather.cloud);
   changeHumidity(currentWeather.humidity);
-  changeGustVelocity(currentWeather.gustKph, currentWeather.gustMph);
+  changeGustVelocity(
+    currentWeather.gustKph,
+    currentWeather.gustMph,
+    unitSystem
+  );
   changeWindDirection(currentWeather.windDir);
   changeSunrise(forecast[0].sunrise);
   changeSunset(forecast[0].sunset);
-  changeMaxTemp(forecast[0].maxTempC, forecast[0].maxTempF);
-  changeMinTemp(forecast[0].minTempC, forecast[0].minTempF);
+  changeMaxTemp(forecast[0].maxTempC, forecast[0].maxTempF, unitSystem);
+  changeMinTemp(forecast[0].minTempC, forecast[0].minTempF, unitSystem);
 }
 
 export default updateLocation;
