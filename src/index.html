@@ -9,7 +9,7 @@
     <header>
         <label for="search">Search city</label>
         <input type="search" name="search" id="search" placeholder="City or City, Country">
-        <button>buscar</button>
+        <button id="searchBtn">buscar</button>
     </header>
 
     <main>
@@ -18,10 +18,10 @@
                 <div id="mainInfo">
                     <h1>Weather in <span id="location"></span></h1>
                     <p id="time">22:10</p>
-                    <p id="date">Fecha</p>
+                    <p id="date"></p>
                     <div class="conditionCon">
-                        <img src="" alt="prueba">
-                        <p class="condition" id="mainCondition">Condicion</p>
+                        <img src="" alt="prueba" id="mainConditionIcon">
+                        <p class="condition" id="mainCondition"></p>
                     </div>
                 </div>
                 <div id="detalles">
@@ -36,19 +36,23 @@
             <aside id="sideInfo">
                 <div class="conditionCon">
                     <img src="" alt="">
-                    <p>Sunrise: <span id="sunrise"></span></p>
+                    <p>Sunrise: </p>
+                    <p id="sunrise"></p>
                 </div>
                 <div class="conditionCon">
                     <img src="" alt="">
-                    <p>Sunset: <span id="sunset"></span></p>
+                    <p>Sunset: </p>
+                    <p id="sunset"></p>
                 </div>
                 <div class="conditionCon">
                     <img src="" alt="">
-                    <p>tTemperatura maxima: <span id="maxTemp"></span></p>
+                    <p>Temperatura maxima: </p>
+                    <p id="maxTemp"></p>
                 </div>
                 <div class="conditionCon">
                     <img src="" alt="">
-                    <p>Temperatura minima: <span id="minTemp"></span></p>
+                    <p>Temperatura minima: </p>
+                    <p id="minTemp"></p>
                 </div>
             </aside>
         </div>
