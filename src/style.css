@@ -1,0 +1,15 @@
+*{
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
