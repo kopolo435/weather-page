@@ -59,6 +59,16 @@ function changeSunrise(sunriseTime) {
   sunriseElement.textContent = `${sunriseTime}`;
 }
 
+function changeSunset(sunsetTime) {
+  const sunsetElement = document.getElementById("sunset");
+  sunsetElement.textContent = sunsetTime;
+}
+
+function changeMaxTemp(maxTemp) {
+  const maxTempElement = document.getElementById("maxTemp");
+  maxTempElement.textContent = `${maxTemp}°C`;
+}
+
 function updateLocation(currentWeather, forecast) {
   changeTitle(currentWeather.city, currentWeather.country);
   changeDate(currentWeather.date);
@@ -72,6 +82,8 @@ function updateLocation(currentWeather, forecast) {
   changeGustVelocity(currentWeather.gustKph, currentWeather.gustMph);
   changeWindDirection(currentWeather.windDir);
   changeSunrise(forecast[0].sunrise);
+  changeSunset(forecast[0].sunset);
+  changeMaxTemp(forecast[0].maxTempC, forecast[0].maxTempF);
 }
 
 export default updateLocation;
