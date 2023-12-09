@@ -21,7 +21,7 @@ main{
     background-color: bisque;
     flex-direction: column;
     gap: 20px;
-    padding: 0px 2vw;
+    padding: 0px 2vw 0px 4vw;
 }
 
 #currentWeather{
