@@ -13,8 +13,25 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     padding: 10px 0px;
+}
+
+#searchForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#search{
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+
+#searchBtn{
+    padding: 5px 10px;
+    border-radius: 20px;
 }
 
 main{
@@ -22,7 +39,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px 2vw 20px 4vw;
+    padding: 10px 2vw 10px 4vw;
 }
 
 #currentWeather{
@@ -94,7 +111,7 @@ main{
 
 footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .sunny{
