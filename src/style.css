@@ -1,0 +1,173 @@
+*{
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0px;
+}
+
+#searchForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#search{
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+
+#searchBtn{
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 2vw 10px 4vw;
+}
+
+#currentWeather{
+    display: flex;
+    justify-content: space-between;
+}
+
+#top{
+    width: min(600px,70vw);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#mainInfo{
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 70px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.conditionCon{
+    display: flex;
+    align-items: center;
+}
+
+.conditionCon p{
+    margin: 0px;
+}
+
+.asideIcon{
+    height: 50px;
+    width: auto;
+}
+
+#sideInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 10px;
+}
+
+#detalles{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#time{
+    font-size: 24px;
+}
+
+#forecastContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.dayForecast{
+    width: 225px;
+    flex: 0 1 auto;
+    height: 200px;
+    background-color: aqua;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.sunny{
+    /* Specify the URL of the image */
+    background-image: url('./img/sunny.jpg');
+    background-repeat: repeat; 
+    background-position: center center; /* Positions the image at the center */
+    color: black;
+}
+
+.night{
+    background-image: url('./img/night.jpg');
+    background-repeat: repeat; 
+    background-position: center center; /* Positions the image at the center */
+    color: white;
+}
+
+
+/*Media queries*/
+/*Media query para cambiar de horizontal a vertical la presentacion*/
+@media (max-width: 650px) {
+    #currentWeather{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #top{
+        width: 100%;
+    }
+
+    #sideInfo{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+    }
+  }
+
+@media (max-width:500px) {
+    #forecastContainer{
+        justify-content: center;
+    }
+}
+
+/*Media query final para dispositivos menor a <=400px*/
+@media (max-width:400px){
+    #sideInfo{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+        padding-left: 10vw;
+    }
+
+    #detalles{
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+        padding-left: 10vw;
+    }
+}
