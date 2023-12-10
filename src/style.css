@@ -99,8 +99,8 @@ footer{
 }
 
 /*Media queries*/
-
-@media (max-width: 500px) {
+/*Media query para cambiar de horizontal a vertical la presentacion*/
+@media (max-width: 650px) {
     #currentWeather{
         flex-direction: column;
         gap: 20px;
@@ -116,8 +116,26 @@ footer{
         grid-template-rows: 1fr 1fr;
         gap: 20px;
     }
+  }
 
+@media (max-width:500px) {
     #forecastContainer{
         justify-content: center;
     }
-  }
+}
+
+/*Media query final para dispositivos menor a <=400px*/
+@media (max-width:400px){
+    #sideInfo{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+        padding-left: 10vw;
+    }
+
+    #detalles{
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+        padding-left: 10vw;
+    }
+}
