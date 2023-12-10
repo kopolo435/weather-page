@@ -1,6 +1,7 @@
 import getWeatherData from "./fetchWeather";
 import * as dataHandler from "./dataHandler";
 import updateLocation from "./updateLocation";
+import setTimeBackground from "./timeBackground.js";
 import style from "./style.css";
 
 const searchBtn = document.getElementById("searchBtn");
@@ -21,6 +22,7 @@ async function searchForecast(location) {
 function updateDisplay(weather) {
   console.log(weather);
   updateLocation(weather.currentWeather, weather.forecastWeather, unitSystem);
+  setTimeBackground(weather.currentWeather.isDay);
 }
 
 searchBtn.addEventListener("click", () => {
