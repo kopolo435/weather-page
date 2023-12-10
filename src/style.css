@@ -57,6 +57,11 @@ main{
     margin: 0px;
 }
 
+.conditionCon img{
+    height: 50px;
+    width: auto;
+}
+
 #sideInfo{
     display: flex;
     flex-direction: column;
