@@ -1,10 +1,10 @@
 import getWeatherData from "./fetchWeather";
 import * as dataHandler from "./dataHandler";
 import updateLocation from "./updateLocation";
-import setTimeBackground from "./timeBackground.js";
+import setTimeBackground from "./timeBackground";
 import style from "./style.css";
 
-const searchBtn = document.getElementById("searchBtn");
+const searchForm = document.getElementById("searchForm");
 const searchBar = document.getElementById("search");
 const unitSystem = "imperial";
 
@@ -25,7 +25,8 @@ function updateDisplay(weather) {
   setTimeBackground(weather.currentWeather.isDay);
 }
 
-searchBtn.addEventListener("click", () => {
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
   searchForecast(searchBar.value).then(updateDisplay);
 });
 
