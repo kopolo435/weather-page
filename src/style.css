@@ -100,14 +100,14 @@ footer{
 .sunny{
     /* Specify the URL of the image */
     background-image: url('./img/sunny.jpg');
-    background-repeat: repeat; /* Prevents the image from repeating */
+    background-repeat: repeat; 
     background-position: center center; /* Positions the image at the center */
     color: black;
 }
 
 .night{
     background-image: url('./img/night.jpg');
-    background-repeat: repeat; /* Prevents the image from repeating */
+    background-repeat: repeat; 
     background-position: center center; /* Positions the image at the center */
     color: white;
 }
