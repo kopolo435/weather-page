@@ -19,7 +19,6 @@ header{
 
 main{
     flex: 1;
-    background-color: bisque;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -97,6 +96,22 @@ footer{
     display: flex;
     justify-content: space-between;
 }
+
+.sunny{
+    /* Specify the URL of the image */
+    background-image: url('./img/sunny.jpg');
+    background-repeat: repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Positions the image at the center */
+    color: black;
+}
+
+.night{
+    background-image: url('./img/night.jpg');
+    background-repeat: repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Positions the image at the center */
+    color: white;
+}
+
 
 /*Media queries*/
 /*Media query para cambiar de horizontal a vertical la presentacion*/
