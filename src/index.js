@@ -26,9 +26,14 @@ async function searchForecast(location) {
   return { currentWeather, forecastWeather };
 }
 
+function changeSideBarVisibility() {
+  sidebar.classList.add("visible");
+}
+
 function showHourForecast(event) {
   const { id } = event.target.closest("[data-id]").dataset;
   displayHourForecast(forecastWeather[id], unitSystem);
+  changeSideBarVisibility();
 }
 
 function addDayCardEvent() {
@@ -46,10 +51,6 @@ function updateDisplay(weather) {
   addDayCardEvent();
 }
 
-function changeSideBarVisibility() {
-  sidebar.classList.add("visible");
-}
-
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   searchForecast(searchBar.value).then(updateDisplay);
@@ -58,7 +59,6 @@ searchForm.addEventListener("submit", (e) => {
 selectUnitSystem.addEventListener("change", () => {
   unitSystem = unitSystem === "imperial" ? "metrico" : "imperial";
   updateDisplay({ currentWeather, forecastWeather });
-  changeSideBarVisibility();
 });
 
 closeBtn.addEventListener("click", () => {
