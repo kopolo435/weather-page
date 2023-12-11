@@ -7,11 +7,13 @@ import style from "./style.css";
 const searchForm = document.getElementById("searchForm");
 const searchBar = document.getElementById("search");
 const unitSystem = "imperial";
+let currentWeather;
+let forecastWeather;
 
 async function searchForecast(location) {
   const data = await getWeatherData(location);
-  const currentWeather = dataHandler.handleCurrentWeather(data);
-  const forecastWeather = dataHandler.getForecast(
+  currentWeather = dataHandler.handleCurrentWeather(data);
+  forecastWeather = dataHandler.getForecast(
     data.forecast.forecastday,
     data.location.localtime
   );
