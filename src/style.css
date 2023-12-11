@@ -96,16 +96,12 @@ main{
 }
 
 #forecastContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(215px,1fr));
     gap: 15px;
 }
 
-.dayForecast{
-    width: 225px;
-    flex: 0 1 auto;
-    height: 200px;
+.dayCard{
     background-color: aqua;
 }
 
