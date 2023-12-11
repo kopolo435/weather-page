@@ -11,14 +11,31 @@ function createImg(url) {
   return img;
 }
 
+function createTemperatureText(text, tempC, tempF, unitSystem) {
+  const textElement = document.createElement("p");
+  if (unitSystem === "metrico") {
+    textElement.textContent = `${text} ${tempC} °C`;
+  } else {
+    textElement.textContent = `${text} ${tempF} °F`;
+  }
+  return textElement;
+}
+
 function createForecastContainers(forecast, unitSystem) {
   const forecastContainer = document.getElementById("forecastContainer");
+  forecastContainer.replaceChildren();
   forecast.forEach((day) => {
     const dayCard = document.createElement("div");
     dayCard.classList.add("dayCard");
     dayCard.appendChild(createTextLine(day.date));
     dayCard.appendChild(createImg(day.iconCondition));
     dayCard.appendChild(createTextLine(day.dayCondition));
+    dayCard.appendChild(
+      createTemperatureText("Max.", day.maxTempC, day.maxTempF, unitSystem)
+    );
+    dayCard.appendChild(
+      createTemperatureText("Min.", day.minTempC, day.minTempF, unitSystem)
+    );
     forecastContainer.appendChild(dayCard);
   });
 }
