@@ -102,7 +102,18 @@ main{
 }
 
 .dayCard{
-    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.dayCardNight{
+    background-color: darkcyan;
+}
+
+.dayCardSunny{
+    background-color: bisque;
 }
 
 footer{
@@ -148,7 +159,7 @@ footer{
 
 @media (max-width:500px) {
     #forecastContainer{
-        justify-content: center;
+        justify-items: center;
     }
 }
 

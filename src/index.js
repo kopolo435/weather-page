@@ -26,8 +26,8 @@ async function searchForecast(location) {
 function updateDisplay(weather) {
   console.log(weather);
   updateLocation(weather.currentWeather, weather.forecastWeather, unitSystem);
-  setTimeBackground(weather.currentWeather.isDay);
   createForecastContainers(forecastWeather, unitSystem);
+  setTimeBackground(weather.currentWeather.isDay);
 }
 
 searchForm.addEventListener("submit", (e) => {

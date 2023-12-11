@@ -14,10 +14,27 @@ function setNightIcons() {
   });
 }
 
+function setDayCardNight() {
+  const dayCards = document.getElementsByClassName("dayCard");
+  Array.from(dayCards).forEach((dayCard) => {
+    dayCard.classList.remove("dayCardSunny");
+    dayCard.classList.add("dayCardNight");
+  });
+}
+
+function setDayCardSunny() {
+  const dayCards = document.getElementsByClassName("dayCard");
+  Array.from(dayCards).forEach((dayCard) => {
+    dayCard.classList.remove("dayCardNight");
+    dayCard.classList.add("dayCardSunny");
+  });
+}
+
 function setDayBackground() {
   const { body } = document;
   body.classList.remove("night");
   body.classList.add("sunny");
+  setDayCardSunny();
   setDayIcons();
 }
 
@@ -25,6 +42,7 @@ function setNightBackground() {
   const { body } = document;
   body.classList.remove("sunny");
   body.classList.add("night");
+  setDayCardNight();
   setNightIcons();
 }
 
