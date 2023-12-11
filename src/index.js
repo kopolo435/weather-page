@@ -2,6 +2,7 @@ import getWeatherData from "./fetchWeather";
 import * as dataHandler from "./dataHandler";
 import updateLocation from "./updateLocation";
 import setTimeBackground from "./timeBackground";
+import createForecastContainers from "./forecastContainer";
 import style from "./style.css";
 
 const searchForm = document.getElementById("searchForm");
@@ -26,6 +27,7 @@ function updateDisplay(weather) {
   console.log(weather);
   updateLocation(weather.currentWeather, weather.forecastWeather, unitSystem);
   setTimeBackground(weather.currentWeather.isDay);
+  createForecastContainers(forecastWeather, unitSystem);
 }
 
 searchForm.addEventListener("submit", (e) => {
@@ -35,7 +37,7 @@ searchForm.addEventListener("submit", (e) => {
 
 selectUnitSystem.addEventListener("change", () => {
   unitSystem = unitSystem === "imperial" ? "metrico" : "imperial";
-  updateLocation(currentWeather, forecastWeather, unitSystem);
+  updateDisplay({ currentWeather, forecastWeather });
 });
 
 searchForecast("Panama,Panamá").then(updateDisplay);
