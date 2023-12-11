@@ -6,7 +6,8 @@ import style from "./style.css";
 
 const searchForm = document.getElementById("searchForm");
 const searchBar = document.getElementById("search");
-const unitSystem = "imperial";
+const selectUnitSystem = document.getElementById("unidad");
+let unitSystem = "metrico";
 let currentWeather;
 let forecastWeather;
 
@@ -30,6 +31,11 @@ function updateDisplay(weather) {
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   searchForecast(searchBar.value).then(updateDisplay);
+});
+
+selectUnitSystem.addEventListener("change", () => {
+  unitSystem = unitSystem === "imperial" ? "metrico" : "imperial";
+  updateLocation(currentWeather, forecastWeather, unitSystem);
 });
 
 searchForecast("Panama,Panamá").then(updateDisplay);
