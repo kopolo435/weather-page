@@ -24,9 +24,11 @@ function createTemperatureText(text, tempC, tempF, unitSystem) {
 function createForecastContainers(forecast, unitSystem) {
   const forecastContainer = document.getElementById("forecastContainer");
   forecastContainer.replaceChildren();
-  forecast.forEach((day) => {
+  forecast.forEach((day, index) => {
     const dayCard = document.createElement("div");
     dayCard.classList.add("dayCard");
+    dayCard.setAttribute("data-id", index);
+
     dayCard.appendChild(createTextLine(day.date));
     dayCard.appendChild(createImg(day.iconCondition));
     dayCard.appendChild(createTextLine(day.dayCondition));
