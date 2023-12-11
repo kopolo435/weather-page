@@ -14,9 +14,12 @@ function createImg(url) {
 function createForecastContainers(forecast, unitSystem) {
   const forecastContainer = document.getElementById("forecastContainer");
   forecast.forEach((day) => {
-    forecastContainer.appendChild(createTextLine(day.date));
-    forecastContainer.appendChild(createImg(day.iconCondition));
-    forecastContainer.appendChild(createTextLine(day.dayCondition));
+    const dayCard = document.createElement("div");
+    dayCard.classList.add("dayCard");
+    dayCard.appendChild(createTextLine(day.date));
+    dayCard.appendChild(createImg(day.iconCondition));
+    dayCard.appendChild(createTextLine(day.dayCondition));
+    forecastContainer.appendChild(dayCard);
   });
 }
 
