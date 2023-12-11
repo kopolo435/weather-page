@@ -26,7 +26,7 @@ function changeConditionText(condition) {
 
 function changeTemperature(tempC, tempF, unitSystem) {
   const tempElement = document.getElementById("temp");
-  if (unitSystem === "metric") {
+  if (unitSystem === "metrico") {
     tempElement.textContent = `${tempC} °C`;
   } else {
     tempElement.textContent = `${tempF} °F`;
@@ -35,7 +35,7 @@ function changeTemperature(tempC, tempF, unitSystem) {
 
 function changeRealSensation(tempC, tempF, unitSystem) {
   const realSensation = document.getElementById("sensation");
-  if (unitSystem === "metric") {
+  if (unitSystem === "metrico") {
     realSensation.textContent = `${tempC} °C`;
   } else {
     realSensation.textContent = `${tempF} °F`;
@@ -54,7 +54,7 @@ function changeHumidity(humidity) {
 
 function changeGustVelocity(gustKph, gustMph, unitSystem) {
   const gustElement = document.getElementById("windVel");
-  if (unitSystem === "metric") {
+  if (unitSystem === "metrico") {
     gustElement.textContent = `${gustKph} Kph`;
   } else {
     gustElement.textContent = `${gustMph} Mph`;
@@ -78,7 +78,7 @@ function changeSunset(sunsetTime) {
 
 function changeMaxTemp(maxTempC, maxTempF, unitSystem) {
   const maxTempElement = document.getElementById("maxTemp");
-  if (unitSystem === "metric") {
+  if (unitSystem === "metrico") {
     maxTempElement.textContent = `${maxTempC} °C`;
   } else {
     maxTempElement.textContent = `${maxTempF} °F`;
@@ -87,7 +87,7 @@ function changeMaxTemp(maxTempC, maxTempF, unitSystem) {
 
 function changeMinTemp(minTempC, maxTempF, unitSystem) {
   const minTempElement = document.getElementById("minTemp");
-  if (unitSystem === "metric") {
+  if (unitSystem === "metrico") {
     minTempElement.textContent = `${minTempC} °C`;
   } else {
     minTempElement.textContent = `${maxTempF} F`;
