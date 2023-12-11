@@ -28,7 +28,7 @@ async function searchForecast(location) {
 
 function showHourForecast(event) {
   const { id } = event.target.closest("[data-id]").dataset;
-  displayHourForecast(forecastWeather[id]);
+  displayHourForecast(forecastWeather[id], unitSystem);
 }
 
 function addDayCardEvent() {
