@@ -150,6 +150,22 @@ footer{
     transition: width 0.5s  ease-in-out;
 }
 
+#hourForecastTop{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 10px 10vw;
+    align-items: center;
+    gap: 10px;
+}
+
+#hourForecastTop p{
+    margin:0px;
+}
+
+#hourDate{
+    grid-column: 1/3;
+}
+
 #hourForecast.visible{
     width:100%; 
 }
