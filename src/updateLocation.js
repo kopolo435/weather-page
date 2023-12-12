@@ -10,7 +10,8 @@ function changeDate(date) {
 
 function changeTime(time) {
   const timeElement = document.getElementById("time");
-  const ending = time < 12 ? "AM" : "PM";
+  const checkTime = time.split(":");
+  const ending = Number(checkTime[0]) < 12 ? "AM" : "PM";
   timeElement.textContent = `${time} ${ending}`;
 }
 
