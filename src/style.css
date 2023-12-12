@@ -126,14 +126,14 @@ footer{
     /* Specify the URL of the image */
     background-image: url('./img/sunny.jpg');
     background-repeat: repeat; 
-    background-position: center center; /* Positions the image at the center */
+    /* background-position: center center; */
     color: black;
 }
 
 .night{
     background-image: url('./img/night.jpg');
     background-repeat: repeat; 
-    background-position: center center; /* Positions the image at the center */
+    /* background-position: center center; */
     color: white;
 }
 
