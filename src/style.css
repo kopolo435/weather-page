@@ -16,6 +16,7 @@ header{
     justify-content: center;
     gap: 15px;
     padding: 10px 0px;
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); ;
 }
 
 #searchForm{
@@ -90,6 +91,16 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 10px 5px;
+}
+
+#currentWeather p{
+    margin: 0px;
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
+}
+
+#unidadContainer label{
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
 }
 
 #time{
@@ -98,7 +109,7 @@ main{
 
 #forecastContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(215px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
     gap: 15px;
 }
 
@@ -107,6 +118,10 @@ main{
     flex-direction: column;
     align-items: center;
     padding: 5px 10px;
+}
+
+.dayCard p{
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
 }
 
 .dayCardNight{
@@ -156,6 +171,7 @@ footer{
     padding: 10px 10vw;
     align-items: center;
     gap: 10px;
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
 }
 
 #hourForecastTop p{
@@ -208,7 +224,7 @@ footer{
 
 .hourContainer p{
     margin: 0px;
-    font-size: 20px;
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
 }
 
 /*Media queries*/
