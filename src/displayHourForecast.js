@@ -25,11 +25,23 @@ function changeMinTemp(minTempC, minTempF, unitSystem) {
   }
 }
 
+function changeConditionText(text) {
+  const textElement = document.getElementById("forecastCondition");
+  textElement.textContent = text;
+}
+
+function changeConditionIcon(url) {
+  const imgElement = document.getElementById("forecastConditionIcon");
+  imgElement.src = url;
+}
+
 function displayHourForecast(forecastDay, unitSystem) {
   changeSunrise(forecastDay.sunrise);
   changeSunset(forecastDay.sunset);
   changeMaxTemp(forecastDay.maxTempC, forecastDay.maxTempF, unitSystem);
   changeMinTemp(forecastDay.minTempC, forecastDay.minTempF, unitSystem);
+  changeConditionIcon(forecastDay.iconCondition);
+  changeConditionText(forecastDay.dayCondition);
 }
 
 export default displayHourForecast;
