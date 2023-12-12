@@ -30,12 +30,25 @@ function setDayCardSunny() {
   });
 }
 
+function setDaySideBar() {
+  const hourForecast = document.getElementById("hourForecast");
+  hourForecast.classList.remove("dayCardNight");
+  hourForecast.classList.add("dayCardSunny");
+}
+
+function setNightSideBar() {
+  const hourForecast = document.getElementById("hourForecast");
+  hourForecast.classList.remove("dayCardSunny");
+  hourForecast.classList.add("dayCardNight");
+}
+
 function setDayBackground() {
   const { body } = document;
   body.classList.remove("night");
   body.classList.add("sunny");
   setDayCardSunny();
   setDayIcons();
+  setDaySideBar();
 }
 
 function setNightBackground() {
@@ -44,6 +57,7 @@ function setNightBackground() {
   body.classList.add("night");
   setDayCardNight();
   setNightIcons();
+  setNightSideBar();
 }
 
 function setTimeBackground(isDay) {
