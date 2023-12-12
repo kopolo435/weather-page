@@ -30,10 +30,18 @@ function changeSideBarVisibility() {
   sidebar.classList.add("visible");
 }
 
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: creates a smooth scrolling effect
+  });
+}
+
 function showHourForecast(event) {
   const { id } = event.target.closest("[data-id]").dataset;
   displayHourForecast(forecastWeather[id], unitSystem);
   changeSideBarVisibility();
+  scrollToTop();
 }
 
 function addDayCardEvent() {
