@@ -45,6 +45,16 @@ function addHourForecast(hourForecast, unitSystem) {
   });
 }
 
+function changeDate(text) {
+  const textElement = document.getElementById("hourDate");
+  textElement.textContent = text;
+}
+
+function changeRainProbability(text) {
+  const textElement = document.getElementById("forecastRainProb");
+  textElement.textContent = `${text}%`;
+}
+
 function displayHourForecast(forecastDay, unitSystem) {
   changeSunrise(forecastDay.sunrise);
   changeSunset(forecastDay.sunset);
@@ -52,6 +62,8 @@ function displayHourForecast(forecastDay, unitSystem) {
   changeMinTemp(forecastDay.minTempC, forecastDay.minTempF, unitSystem);
   changeConditionIcon(forecastDay.iconCondition);
   changeConditionText(forecastDay.dayCondition);
+  changeDate(forecastDay.date);
+  changeRainProbability(forecastDay.rainProbability);
   addHourForecast(forecastDay.hourForecast, unitSystem);
 }
 

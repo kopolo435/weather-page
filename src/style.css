@@ -16,6 +16,7 @@ header{
     justify-content: center;
     gap: 15px;
     padding: 10px 0px;
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); ;
 }
 
 #searchForm{
@@ -90,6 +91,16 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 10px 5px;
+}
+
+#currentWeather p{
+    margin: 0px;
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
+}
+
+#unidadContainer label{
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
 }
 
 #time{
@@ -98,7 +109,7 @@ main{
 
 #forecastContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(215px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
     gap: 15px;
 }
 
@@ -107,6 +118,10 @@ main{
     flex-direction: column;
     align-items: center;
     padding: 5px 10px;
+}
+
+.dayCard p{
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
 }
 
 .dayCardNight{
@@ -126,23 +141,22 @@ footer{
     /* Specify the URL of the image */
     background-image: url('./img/sunny.jpg');
     background-repeat: repeat; 
-    background-position: center center; /* Positions the image at the center */
+    /* background-position: center center; */
     color: black;
 }
 
 .night{
     background-image: url('./img/night.jpg');
     background-repeat: repeat; 
-    background-position: center center; /* Positions the image at the center */
+    /* background-position: center center; */
     color: white;
 }
 
 /*Hour forecast container*/
 
 #hourForecast{
-    background-color: aqua;
     width: 0px; 
-    height: 100%;
+    height: fit-content;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -151,8 +165,66 @@ footer{
     transition: width 0.5s  ease-in-out;
 }
 
+#hourForecastTop{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 10px 10vw;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
+}
+
+#hourForecastTop p{
+    margin:0px;
+}
+
+#hourDate{
+    grid-column: 1/3;
+    font-size: 24px;
+}
+
 #hourForecast.visible{
     width:100%; 
+}
+
+.time{
+    font-size: 24px;
+}
+
+.container{
+    width: 100%;
+    padding-left: 5vw;
+}
+
+#forecastDescription{
+    font-size: 20px;
+}
+
+#return{
+    margin-top: 10px;
+    padding: 2px 5px;
+}
+
+#hourContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15vw;
+    gap: 20px;
+}
+
+.hourContainer{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: auto auto;
+    gap: 10px;
+    align-items: center;
+    border: 2px solid black;
+    padding: 2vh 10vw 2vh 4vw;
+}
+
+.hourContainer p{
+    margin: 0px;
+    font-size: clamp(1rem, 0.893rem + 0.536vw, 1.375vw); 
 }
 
 /*Media queries*/
@@ -179,6 +251,16 @@ footer{
     #forecastContainer{
         justify-items: center;
     }
+
+    .hourContainer{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .hourCondition{
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+    
 }
 
 /*Media query final para dispositivos menor a <=400px*/

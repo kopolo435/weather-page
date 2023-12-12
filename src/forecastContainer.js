@@ -25,7 +25,7 @@ function createForecastContainers(forecast, unitSystem) {
   const forecastContainer = document.getElementById("forecastContainer");
   forecastContainer.replaceChildren();
   forecast.forEach((day, index) => {
-    const dayCard = document.createElement("div");
+    const dayCard = document.createElement("button");
     dayCard.classList.add("dayCard");
     dayCard.setAttribute("data-id", index);
 
