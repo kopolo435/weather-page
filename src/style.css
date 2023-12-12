@@ -161,8 +161,7 @@ footer{
 #hourContainer{
     display: flex;
     flex-direction: column;
-    padding-left: 15vw;
-    padding-right: 15vw;
+    padding: 20px 15vw;
     gap: 20px;
 }
 

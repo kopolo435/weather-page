@@ -22,7 +22,7 @@ function createIcon(url) {
 
 function createConditioElement(text, imgUrl) {
   const conditionElement = document.createElement("div");
-  conditionElement.classList.add("conditionCon");
+  conditionElement.classList.add("conditionCon", "hourCondition");
 
   conditionElement.appendChild(createIcon(imgUrl));
   conditionElement.appendChild(createText(text));
