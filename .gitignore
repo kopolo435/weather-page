@@ -5,5 +5,3 @@ todo.txt
 #node modules folder 
 node_modules
 
-#temporal para evitar actualizar build a cada rato
-/dist
