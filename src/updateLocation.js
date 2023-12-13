@@ -12,6 +12,7 @@ function changeTime(time) {
   const timeElement = document.getElementById("time");
   const checkTime = time.split(":");
   const ending = Number(checkTime[0]) < 12 ? "AM" : "PM";
+  console.log(checkTime[0], ending);
   timeElement.textContent = `${time} ${ending}`;
 }
 
